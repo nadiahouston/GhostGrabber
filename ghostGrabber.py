@@ -93,7 +93,7 @@ def grabGhost(filename):
 
     XY_frames = [frame for frame, inputVal in input_generator(total_inputs) if inputVal & 0x000C]
 
-    # Assumes shrooms are used first frame where X/Y pressed and next frame more than 1/3 after
+    # Assumes shrooms are used first frame where X/Y pressed and next frame more than 1/3 second after
     shroom_times = [XY_frames[0]/60, next(frame/60 for frame in XY_frames if frame > (XY_frames[0] + 20))]
 
     shrooms = [0 for __ in range(laps)]
