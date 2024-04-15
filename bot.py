@@ -38,4 +38,4 @@ async def on_message(message):
                 await message.channel.send(content=output, file=discord.File(newName))
                 os.remove(newName)
 
-client.run(os.environ["GGBETA_API_KEY"])
+client.run(os.environ["GG_API_KEY"])
