@@ -47,13 +47,13 @@ def grabGhost(filename):
     track = track_names[track_abbr]
 
 
-    ghost.seek(0x146B) # Course time in ASCII
-    message_time = readStr(8)
-    file_time = message_time.replace(":","_")
-
-
     ghost.seek(0x1488) # Course time in ms
     course_time_ms = readInt(4)
+    milliseconds = str(course_time_ms % 1000).zfill(3)
+    seconds = str(int(course_time_ms/1000) % 60).zfill(2)
+    minutes = str(int(course_time_ms/60000))
+    message_time = minutes + ":" + seconds + "." + milliseconds
+    file_time = minutes + "_" + seconds + "_" + milliseconds
 
 
     ghost.seek(0x1484) # Initials in ASCII
