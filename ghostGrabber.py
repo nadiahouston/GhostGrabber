@@ -77,7 +77,7 @@ def grabGhost(filename):
 
 
     ghost.seek(0x148C) # Number of inputs
-    total_inputs = readInt(4)
+    total_inputs = (readInt(4) - 180) # Ignore 3-second countdown
 
     # Generator function for ghost controller inputs
     def input_generator(total_inputs):
