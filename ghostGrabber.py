@@ -82,7 +82,7 @@ def grabGhost(filename):
     # Generator function for ghost controller inputs
     def input_generator(total_inputs):
         num = 0
-        ghost.seek(0x1618) # Start of input data
+        ghost.seek(0x1610) # Start of input data
         while num < total_inputs:
             yield num, readInt(2)
             num += 1
