@@ -15,12 +15,8 @@ laps_dict   = {"BP":7, "WC":2}
 
 region_dict = {"GM4E":"NTSC-U", "GM4J":"NTSC-J", "GM4P":"PAL"}
 
-"""
-input: filename - an MKDD ghost file
-output: new_filename - a new name for the file
-        message - GhostGrabber's output message
-"""
-def grabGhost(filename):
+def grabGhost(filename) -> str, str:
+    """Takes a ghost and "grabs" it, returning an output message and a new filename"""
 
     ghost = open(filename, 'rb')
 
@@ -130,6 +126,8 @@ def grabGhost(filename):
     return new_filename, message
 
 def changeRegion(filename, regionID):
+    """Changes the region of a ghost file"""
+
     rdict = {"U":b'GM4E', "J":b'GM4J', "P":b'GM4P'}
 
     gameID = rdict.get(regionID)
