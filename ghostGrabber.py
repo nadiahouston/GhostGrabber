@@ -15,8 +15,8 @@ laps_dict   = {"BP":7, "WC":2}
 
 region_dict = {"GM4E":"NTSC-U", "GM4J":"NTSC-J", "GM4P":"PAL"}
 
-def grabGhost(filename) -> str, str:
-    """Takes a ghost and "grabs" it, returning an output message and a new filename"""
+def grabGhost(filename) -> list[str]:
+    """Takes an open ghost file and "grabs" it, returning a new filename and an output message"""
 
     ghost = open(filename, 'rb')
 
@@ -139,6 +139,5 @@ def changeRegion(filename, regionID):
     return
 
 if __name__ == '__main__':
-    f = open(sys.argv[1], 'rb')
-    __, message = grabGhost(f)
+    __, message = grabGhost(sys.argv[1])
     print(message)
