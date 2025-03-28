@@ -93,8 +93,6 @@ def grabGhost(filename) -> list[str]:
 
     shroom_times = []
 
-    breakpoint()
-
     while XY_frames:
         frame = XY_frames[0]
         shroom_times.append(frame/60)
