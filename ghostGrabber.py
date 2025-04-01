@@ -15,7 +15,7 @@ laps_dict   = {"BP":7, "WC":2}
 
 region_dict = {"GM4E":"NTSC-U", "GM4J":"NTSC-J", "GM4P":"PAL"}
 
-def grabGhost(filename) -> list[str]:
+def grabGhost(filename):
     """Takes an open ghost file and "grabs" it, returning a new filename and an output message"""
 
     ghost = open(filename, 'rb')
